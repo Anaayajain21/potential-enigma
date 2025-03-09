@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapped with Anna</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        #game-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid red;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        button {
+            background: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Trapped with Anna</h1>
+        <p>You are Rachel, Anna Delvey's 'friend'. You just paid $62,000 for a vacation. Your balance is dropping. Your reality is shattering.</p>
+        <button onclick="startGame()">Start</button>
+        <div id="scene" class="hidden"></div>
+    </div>
+    <script>
+        function startGame() {
+            document.getElementById('scene').classList.remove('hidden');
+            document.getElementById('scene').innerHTML = "<p>Your card is declining. Anna isn't picking up your calls...</p>" +
+                "<button onclick=\"revengeOptions()\">What do you do?</button>";
+        }
+
+        function revengeOptions() {
+            document.getElementById('scene').innerHTML = "<p>You are filled with rage. You have two choices:</p>" +
+                "<button onclick=\"goToPolice()\">Go to the police</button>" +
+                "<button onclick=\"bustOnSocialMedia()\">Expose her on Instagram</button>";
+        }
+
+        function goToPolice() {
+            document.getElementById('scene').innerHTML = "<p>You go to the police, but Anna’s lawyers twist the case. You have no solid proof.</p>" +
+                "<p>You are accused of false allegations and arrested.</p>" +
+                "<p>In jail, you wake up one night. A shadow looms over your bed...</p>" +
+                "<h2>Game Over. Anna got you.</h2>";
+        }
+
+        function bustOnSocialMedia() {
+            document.getElementById('scene').innerHTML = "<p>You post everything on Instagram. Screenshots, transactions, voice recordings.</p>" +
+                "<p>The internet explodes. #AnnaScam trends worldwide.</p>" +
+                "<p>Anna is arrested. People start a fundraiser to recover your money.</p>" +
+                "<h2>You Win! Justice is served, and you get your money back.</h2>";
+        }
+    </script>
+</body>
+</html>
